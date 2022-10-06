@@ -13,16 +13,18 @@
         <h1>SKETCHPAD</h1>
     </nav>
     <sidebar class="controlsBar">
-        <div class="palette">
-
-        </div>
-        <input type="range" name="" id="">
-        <input type="color" name="" id="">
-        <input type="color" name="" id="">
+        <input type="range" name="range" value="16" min="16" max="48" id="range">
+        <span id="rangeValue">16</span>
+        <input type="color" name="color1" id="color1">
+        <input type="color" name="color2" id="color2" value="#ffffff">
+        <input type="color" name="backColor" id="backColor" value="#ffffff">
+        <button id="save">save</button>
+        <button id="erase">erase</button>
     </sidebar>
     <main>
         <div id="container" oncontextmenu="return false"></div>
-        <button>save</button>
+        <div id="background"></div>
+        
     </main>
     <sidebar class="savedElements">
         <div>

@@ -5,12 +5,12 @@
 body {
     height: 100vh;
     display: grid;
-    grid-template: 150px auto / 25% 50% 25%;
+    grid-template: 150px auto / 30% 70%;
     background-color: antiquewhite;
 }
 
 nav {
-    grid-area: 1 / 1 / 1 / span 3;
+    grid-area: 1 / 1 / 1 / span 2;
 }
 
 #container {
@@ -33,12 +33,13 @@ nav {
 
 .cell {
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    /* width: 10px;
+    height: 10px; */
     /* border: 1px solid rgba(0, 0, 0, 0.098); */
     margin: 0;
     box-sizing: border-box;
 }
+
 
 /* 
 

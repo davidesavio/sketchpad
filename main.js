@@ -1,4 +1,4 @@
-let grid = []
+let grid = [];
 let isMouseDown = false;
 let gridDimension = 16;
 let colors = ['black', 'white']
@@ -34,22 +34,26 @@ range.addEventListener('change', (e) => {
 })
 
 
-function createGrid (dimension) {
-    grid = new Array(dimension*dimension)
+function createGrid (cellsNumber) {
+    grid = new Array(cellsNumber*cellsNumber)
     container.innerHTML = ''
     for (let i = 0; i < grid.length; i++) {
-        let div = document.createElement('div')
-        div.setAttribute('id', `cell_${i}`)
-        div.classList.add("cell")
-        div.style.width = `${500/dimension}px`
-        div.style.height = `${500/dimension}px`
+        let div = createDiv(cellsNumber)
         addDivListeners(div, colors)
         grid[i] = div
         container.appendChild(div)
     }
 }
 
-function addDivListeners(div, colors) {
+function createDiv(cellsNumber) {
+    let div = document.createElement('div')
+    div.classList.add("cell")
+    div.style.width = `${500/cellsNumber}px`
+    div.style.height = `${500/cellsNumber}px`
+    return div;
+}
+
+function addDivListeners(div) {
     div.addEventListener('mousedown', (e) => {paintMouseDown(e, div)})
     div.addEventListener('mouseover', (e) => {paintMouseOver(e, div)})
     div.addEventListener('mouseup', stopPaint)
@@ -75,7 +79,5 @@ const paintMouseOver = (e, div) => {
 const stopPaint = () => {
     isMouseDown = false;
 }
-
-
 
 createGrid(gridDimension)

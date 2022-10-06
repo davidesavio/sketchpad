@@ -1,3 +1,14 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    grid-template: 150px auto / 25% 50% 25%;
+}
+
+nav {
+    grid-area: 1 / 1 / 1 / span 3;
+}
+
 #container {
     width: 500px;
     height: 500px;
